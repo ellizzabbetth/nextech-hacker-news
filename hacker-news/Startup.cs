@@ -1,3 +1,5 @@
+using hacker_news.Repository;
+using hacker_news.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -21,6 +23,11 @@ namespace hacker_news
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddHttpClient();
+            services.AddScoped<IHackerNewsRepository, HackerNewsRepository>();
+            //  services.AddTransient<IHttpClientService, HttpClientFactory
+            // services.AddTransient<IHackerNewsService, HackerNewsService>();
+
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
@@ -42,7 +49,8 @@ namespace hacker_news
                 app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
+         //    app.UseHttpsRedirection();
+      //   app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
             app.UseStaticFiles();
             if (!env.IsDevelopment())
             {
@@ -67,7 +75,8 @@ namespace hacker_news
 
                 if (env.IsDevelopment())
                 {
-                    spa.UseAngularCliServer(npmScript: "start");
+                   // spa.UseAngularCliServer(npmScript: "start");
+                     spa.UseProxyToSpaDevelopmentServer("http://localhost:4200");
                 }
             });
         }
