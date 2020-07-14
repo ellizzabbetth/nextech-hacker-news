@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { IStory } from '../models/IStory';
@@ -39,6 +39,6 @@ export class HackerNewsService {
           const errMessage = error.error.message;
           return Observable.throw(errMessage);
       }
-      return Observable.throw(error || 'Server error');
+     return Observable.throw(error || 'Server error');
   }
 }

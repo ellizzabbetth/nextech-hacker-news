@@ -1,2 +1,8 @@
 # nextech-hacker-news
-Submission for role at Nextech
+
+core:
+
+
+xunit:
+
+https://softchris.github.io/pages/dotnet-core.html#creating-a-solution
