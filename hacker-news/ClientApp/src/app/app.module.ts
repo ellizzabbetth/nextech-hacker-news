@@ -14,7 +14,14 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { HackerNewsComponent } from './hacker-news/hacker-news.component';
 import { HackerNewsService } from './services/hacker-news.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatTableModule, MatIconModule, MatPaginatorModule, MatButtonModule, MatFormFieldModule, MatInputModule } from '@angular/material';
+
+
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { MatTableModule } from '@angular/material/table';
+import { MatInputModule } from '@angular/material';
 
 
 @NgModule({
@@ -37,12 +44,12 @@ import { MatTableModule, MatIconModule, MatPaginatorModule, MatButtonModule, Mat
         { path: 'hacker-news', component: HackerNewsComponent},
       ]),
       MatFormFieldModule,
-      MatIconModule,
       MatInputModule,
       BrowserAnimationsModule,
       MatTableModule,
       MatPaginatorModule,
-      MatButtonModule
+      MatButtonModule,
+      MatIconModule
     ],
     providers: [HackerNewsService],
     bootstrap: [AppComponent]

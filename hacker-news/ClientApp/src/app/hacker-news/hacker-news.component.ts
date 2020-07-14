@@ -1,4 +1,5 @@
-import { Component, OnInit, ViewChild  } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+
 import { HackerNewsService } from '../services/hacker-news.service';
 import { IStory } from '../models/IStory';
 import { MatTableDataSource, MatPaginator } from '@angular/material';
@@ -6,7 +7,7 @@ import { MatTableDataSource, MatPaginator } from '@angular/material';
 @Component({
   selector: 'app-hacker-news',
   templateUrl: './hacker-news.component.html',
-  styleUrls: ['./hacker-news.component.css'],
+  styleUrls: ['./hacker-news.component.css']
 })
 
 export class HackerNewsComponent implements OnInit {

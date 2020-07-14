@@ -8,6 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
+
 namespace hacker_news
 {
     public class Startup
@@ -26,18 +27,21 @@ namespace hacker_news
             services.AddHttpClient();
             services.AddScoped<IHackerNewsRepository, HackerNewsRepository>();
             //  services.AddTransient<IHttpClientService, HttpClientFactory
-            // services.AddTransient<IHackerNewsService, HackerNewsService>();
+           services.AddTransient<IHackerNewsService, HackerNewsService>();
 
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
                 configuration.RootPath = "ClientApp/dist";
             });
+            services.AddCors();
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseCors("AllowAllHeaders");
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -58,7 +62,7 @@ namespace hacker_news
             }
 
             app.UseRouting();
-
+            app.UseCors(builder => builder.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
