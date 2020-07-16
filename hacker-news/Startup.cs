@@ -48,12 +48,12 @@ namespace hacker_news
             }
             else
             {
-                app.UseExceptionHandler("/Error");
+              //  app.UseExceptionHandler("/Error");
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
-
-         //    app.UseHttpsRedirection();
+  app.UseDeveloperExceptionPage();
+           app.UseHttpsRedirection();
       //   app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
             app.UseStaticFiles();
             if (!env.IsDevelopment())
@@ -62,6 +62,7 @@ namespace hacker_news
             }
 
             app.UseRouting();
+              // app.UseDeveloperExceptionPage();
             app.UseCors(builder => builder.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
             app.UseEndpoints(endpoints =>
             {
