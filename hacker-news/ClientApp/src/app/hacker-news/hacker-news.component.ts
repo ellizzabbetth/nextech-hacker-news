@@ -23,6 +23,11 @@ export class HackerNewsComponent implements OnInit {
    this.loadStories();
   }
 
+  // tslint:disable-next-line:use-lifecycle-interface
+  ngAfterViewInit(): void {
+    this.dataSource.paginator = this.paginator;
+  }
+
   loadStories() {
     this.hackerNewsService.getNewStories().subscribe(
       result => {
