@@ -1,5 +1,10 @@
 # hacker_news
 
+Deployment: https://nextech-hacker-news.azurewebsites.net/hacker-news
+
+https://levelup.gitconnected.com/deploy-angular-application-on-azure-web-service-960e441bb13d
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0.
 
 ## Development server

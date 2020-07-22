@@ -20,6 +20,8 @@ export class HackerNewsService {
   }
 
   getNewStories(): Observable<IStory[]> {
+
+    console.log('service');
       return this.http
       .get(this.baseHackerUrl)
           .pipe(
