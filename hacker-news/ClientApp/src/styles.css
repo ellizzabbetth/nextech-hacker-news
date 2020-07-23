@@ -1,6 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 
 /* Provide sufficient contrast against white background */
+
+@import "../node_modules/@angular/material/prebuilt-themes/indigo-pink.css";
 a {
   color: #0366d6;
 }
@@ -57,6 +59,7 @@ mat-footer-row mat-footer-cell {
   width: 32px;
 }
 
+/* alternate fix to material dropdown styling issue
 
   .cdk-overlay-container,
   .cdk-global-overlay-wrapper {
@@ -80,5 +83,5 @@ mat-footer-row mat-footer-cell {
     max-width: 100%;
     max-height: 100%;
     background-color: white;
-border: 1px solid rgba(128, 128, 128);
-  }
+    border: 1px solid rgba(128, 128, 128);
+  } */
