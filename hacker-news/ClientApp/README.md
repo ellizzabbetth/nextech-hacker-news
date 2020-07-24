@@ -1,8 +1,32 @@
+
+Angular project template. dotnet new angular -o my-new-app
+
+ASP.NET Core integrated with Angular
+Angular services integrate with ASP.NET Core API
+
+REST = Representational State Transfer
+- architectural style for distributed systems
+- MVC concepts in Core
+- expose resources (state) to clients
+- Resources identitfied with a URI
+
+Client-Side: Angular, RxJS, XHR/HTTP, Observables vs Promises
+
+Angular
+- 
 # hacker_news
 
 Deployment: https://nextech-hacker-news.azurewebsites.net/hacker-news
 
 https://levelup.gitconnected.com/deploy-angular-application-on-azure-web-service-960e441bb13d
+
+Backend Publish:
+https://docs.microsoft.com/en-us/aspnet/core/tutorials/publish-to-azure-webapp-using-vscode?view=aspnetcore-3.1
+
+
+YAML tutorial: https://hjerpbakk.com/blog/2019/10/03/asp-net-core-and-github-actions
+https://jamesnaylor.dev/Posts/Read?id=github-actions
+https://github.com/Azure/actions-workflow-samples/blob/master/AppService/asp.net-core-webapp-on-azure.yml
 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0.
